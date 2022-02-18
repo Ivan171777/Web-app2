@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sem2</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      ReactDOM.render(
+        <div><h1>Который час?</h1></div>,
+        document.getElementById('root')
+      );
+    
+    function Clock(props) {
+        return (
+          <div>
+            <h1>Который час?</h1>
+            <h2>Время сейчас - {props.date.toLocaleTimeString()}.</h2>
+          </div>
+        );
+      }
+      
+      function tick() {
+        ReactDOM.render(
+          <Clock date={new Date()} />,
+          document.getElementById('root')
+        );
+      }
+      setInterval(tick, 1000);
+    </script>
+    <form>
+        <label>
+            Ваше имя:
+            <input type="text" name="name" />
+        </label>
+        <input type="submit" value="Submit" />
+    </form>
+    <br>
+    <textarea>
+        Расскажите коротко о себе
+    </textarea>
+    <br>
+    <div> Ваш любимый фрукт:</div>
+    <select>
+        <option value="grapefruit">Grapefruit</option>
+        <option value="lime">Lime</option>
+        <option selected value="coconut">Coconut</option>
+        <option value="mango">Mango</option>
+    </select>
+  </body>
+</html>
